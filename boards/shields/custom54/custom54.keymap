@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
 #define LOWER   1
@@ -50,17 +51,17 @@
             display-name = "Raise";
             bindings = <
 /* Row 0 */
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3   &kp CARET  &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR
+&bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3      &kp CARET  &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR
 /* Row 1 */
-&kp EXCL   &kp AT       &kp HASH     &kp DLLR     &kp PRCNT       &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH
+&kp EXCL   &kp AT          &kp HASH        &kp DLLR        &kp PRCNT         &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH
 /* Row 2 */
-&kp GRAVE  &trans       &trans       &trans       &trans          &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+&kp GRAVE  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD   &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
 /* Row 3 */
-&kp TILDE  &trans       &trans       &trans       &trans          &trans     &trans    &trans    &trans    &trans
+&kp TILDE  &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD   &trans     &trans    &trans    &trans    &trans
 /* Row 4 */
-           &trans       &trans                                               &trans    &trans
+           &trans          &trans                                                       &trans    &trans
 /* Row 5 */
-&trans     &trans       &trans       &trans       &trans          &trans     &trans    &trans    &trans    &trans
+&trans     &trans          &trans          &trans          &trans            &trans     &trans    &trans    &trans    &trans
             >;
         };
     };
