@@ -1,0 +1,6 @@
+
+.zmk/
+
+.west/
+build/
+firmware/

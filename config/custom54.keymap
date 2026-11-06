@@ -1,0 +1,67 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Base";
+            bindings = <
+/* Row 0: Numbers */
+&kp N1     &kp N2    &kp N3    &kp N4    &kp N5          &kp N6     &kp N7    &kp N8    &kp N9    &kp N0
+/* Row 1: Top */
+&kp Q      &kp W     &kp E     &kp R     &kp T           &kp Y      &kp U     &kp I     &kp O     &kp P
+/* Row 2: Home */
+&kp A      &kp S     &kp D     &kp F     &kp G           &kp H      &kp J     &kp K     &kp L     &kp SEMI
+/* Row 3: Bottom */
+&kp Z      &kp X     &kp C     &kp V     &kp B           &kp N      &kp M     &kp COMMA &kp DOT   &kp MINUS
+/* Row 4: Extra bottom keys */
+           &kp LALT  &kp LGUI                                       &kp RGUI  &kp RALT
+/* Row 5: Thumb clusters */
+&kp TAB    &kp ESC   &kp LCTRL &kp LSHFT &lt LOWER SPACE &lt RAISE RET &kp BSPC  &kp DEL   &kp RSHFT &kp RCTRL
+            >;
+        };
+
+        lower_layer {
+            display-name = "Lower";
+            bindings = <
+/* Row 0 */
+&kp F1     &kp F2    &kp F3    &kp F4    &kp F5          &kp F6     &kp F7    &kp F8    &kp F9    &kp F10
+/* Row 1 */
+&kp TAB    &trans    &trans    &trans    &trans          &kp HOME   &kp PG_DN &kp PG_UP &kp END   &kp F11
+/* Row 2 */
+&kp CAPS   &trans    &trans    &trans    &trans          &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &kp F12
+/* Row 3 */
+&trans     &trans    &trans    &trans    &trans          &kp INS    &kp PSCRN &trans    &trans    &trans
+/* Row 4 */
+           &trans    &trans                                         &trans    &trans
+/* Row 5 */
+&trans     &trans    &trans    &trans    &trans          &trans     &trans    &trans    &trans    &trans
+            >;
+        };
+
+        raise_layer {
+            display-name = "Raise";
+            bindings = <
+/* Row 0 */
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3   &kp CARET  &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR
+/* Row 1 */
+&kp EXCL   &kp AT       &kp HASH     &kp DLLR     &kp PRCNT       &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH
+/* Row 2 */
+&kp GRAVE  &trans       &trans       &trans       &trans          &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+/* Row 3 */
+&kp TILDE  &trans       &trans       &trans       &trans          &trans     &trans    &trans    &trans    &trans
+/* Row 4 */
+           &trans       &trans                                               &trans    &trans
+/* Row 5 */
+&trans     &trans       &trans       &trans       &trans          &trans     &trans    &trans    &trans    &trans
+            >;
+        };
+    };
+};
