@@ -1,14 +1,13 @@
 #include "custom54.dtsi"
 
 &kscan {
-    // Default pro_micro column pins for left half (Col 0 through Col 4)
-    // With row2col, columns are input pins read with pull-downs.
-    // Adjust these pins if your hardware wiring differs!
+    // Column pins for left half (Col 0 through Col 4)
+    // Contiguous pins on the right side of nice!nano: 20, 19, 18, 15, 14
     col-gpios
-        = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Col 0: Outer pinky
+        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Col 1: Ring
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Col 2: Middle
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Col 3: Index
+        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Col 4: Inner index
         ;
 };
