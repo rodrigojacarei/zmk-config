@@ -4,10 +4,10 @@
     // Column pins for left half (Col 0 through Col 4)
     // Contiguous pins on the right side of nice!nano: 20, 19, 18, 15, 14
     col-gpios
-        = <&pro_micro 20 GPIO_ACTIVE_HIGH>   // Col 0: Outer pinky
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>   // Col 1: Ring
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>   // Col 2: Middle
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>   // Col 3: Index
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH>   // Col 4: Inner index
+        = <&pro_micro 14 GPIO_ACTIVE_HIGH>   // Col 0: Outer pinky (1, Q, A, Z)
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>   // Col 1: Ring (2, W, S, X)
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>   // Col 2: Middle (3, E, D, C)
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>   // Col 3: Index (4, R, F, V)
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>   // Col 4: Inner index (5, T, G, B)
         ;
 };

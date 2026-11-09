@@ -8,10 +8,10 @@
     // Column pins for right half (Col 0 through Col 4)
     // Symmetrical to left half.
     col-gpios
-        = <&pro_micro 14 GPIO_ACTIVE_HIGH>   // Col 0: Inner index
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>   // Col 1: Index
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>   // Col 2: Middle
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>   // Col 3: Ring
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>   // Col 4: Outer pinky
+        = <&pro_micro 20 GPIO_ACTIVE_HIGH>   // Col 0: Inner index (6, Y, H, N)
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>   // Col 1: Index (7, U, J, M)
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>   // Col 2: Middle (8, I, K, COMMA)
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>   // Col 3: Ring (9, O, L, DOT)
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>   // Col 4: Outer pinky (0, P, SEMI, MINUS)
         ;
 };
