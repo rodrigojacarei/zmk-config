@@ -7,6 +7,7 @@
         zmk,kscan = &kscan;
         zmk,matrix-transform = &default_transform;
         zmk,physical-layout = &default_layout;
+        zephyr,display = &oled;
     };
 
     kscan: kscan {
@@ -45,5 +46,24 @@ RC(3, 0) RC(3, 1) RC(3, 2) RC(3, 3) RC(3, 4) RC(3, 5) RC(3, 6) RC(3, 7) RC(3, 8)
 /* Row 5: Thumb clusters */
 RC(5, 0) RC(5, 1) RC(5, 2) RC(5, 3) RC(5, 4) RC(5, 5) RC(5, 6) RC(5, 7) RC(5, 8) RC(5, 9)
         >;
+    };
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
