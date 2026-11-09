@@ -11,19 +11,18 @@
 
     kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col";
+        diode-direction = "col2row";
         wakeup-source;
 
-        // Default pro_micro row pins (Row 0 through Row 5)
-        // With row2col, rows are driven active-high outputs.
-        // Adjust these pins if your hardware wiring differs!
+        // With col2row, columns are driven active-high outputs,
+        // and rows are input pins read with pull-downs.
         row-gpios
-            = <&pro_micro 4 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 5 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 6 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 7 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 8 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 9 GPIO_ACTIVE_HIGH>
+            = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 
