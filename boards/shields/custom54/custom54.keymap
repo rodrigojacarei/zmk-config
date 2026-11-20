@@ -9,6 +9,24 @@
 #define RAISE   2
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        /* Combo nas duas pontas da fileira de numeros: 1 (pos 0) + 0 (pos 9) */
+        combo_bootloader_num_ends {
+            timeout-ms = <60>;
+            key-positions = <0 9>;
+            bindings = <&bootloader>;
+        };
+
+        /* Combo nas duas pontas da metade esquerda: 1 (pos 0) + 5 (pos 4) - para quando só a esquerda estiver plugada */
+        combo_bootloader_left_num_ends {
+            timeout-ms = <60>;
+            key-positions = <0 4>;
+            bindings = <&bootloader>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -42,7 +60,7 @@
 /* Row 3 */
 &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1    &out OUT_BLE    &out OUT_TOG      &kp INS    &kp PSCRN &trans    &trans    &trans
 /* Row 4 */
-           &trans          &mo RAISE                                                    &trans    &trans
+           &bootloader     &mo RAISE                                                    &trans     &bootloader
 /* Row 5 */
 &trans     &trans          &trans          &mo RAISE       &trans            &trans     &trans    &trans    &trans    &trans
             >;
@@ -60,7 +78,7 @@
 /* Row 3 */
 &kp TILDE  &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD   &out OUT_BLE &out OUT_USB &out OUT_TOG &studio_unlock &bt BT_CLR_ALL
 /* Row 4 */
-           &trans          &trans                                                       &trans    &trans
+           &bootloader     &sys_reset                                                   &sys_reset &bootloader
 /* Row 5 */
 &trans     &trans          &trans          &trans          &trans            &trans     &trans    &trans    &trans    &trans
             >;
